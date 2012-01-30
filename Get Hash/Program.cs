@@ -53,8 +53,7 @@ namespace Nepochal.GetHash
       }
 
       if (args.Length == 1 && File.Exists(args[0]))
-        if (Path.GetExtension(args[0]).ToLower() != ".ghf")
-          Application.Run(new Filemode(args[0]));
+        Application.Run(new Filemode(args[0]));
 
       while (mbRunning)
         switch (mcConfiguration.LastMode)
@@ -90,7 +89,7 @@ namespace Nepochal.GetHash
       try
       {
         string lsPath = Path.Combine(Application.StartupPath, "config.ini");
-        if(!File.Exists(lsPath))
+        if (!File.Exists(lsPath))
           return false;
         FileStream lfsStream = new FileStream(lsPath, FileMode.Open, FileAccess.Read, FileShare.None);
         StreamReader lssReader = new StreamReader(lfsStream, Encoding.UTF8);

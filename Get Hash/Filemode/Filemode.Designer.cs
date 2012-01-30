@@ -63,7 +63,7 @@
       this.buttonChooseFile.Size = new System.Drawing.Size(25, 25);
       this.buttonChooseFile.TabIndex = 3;
       this.buttonChooseFile.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-      this.toolTip.SetToolTip(this.buttonChooseFile, "Datei wählen");
+      this.toolTip.SetToolTip(this.buttonChooseFile, "Select file");
       this.buttonChooseFile.UseVisualStyleBackColor = false;
       this.buttonChooseFile.Click += new System.EventHandler(this.buttonChooseFile_Click);
       // 
@@ -89,8 +89,9 @@
       this.textBoxResult.ReadOnly = true;
       this.textBoxResult.Size = new System.Drawing.Size(278, 20);
       this.textBoxResult.TabIndex = 5;
+      this.textBoxResult.Tag = "Hash value";
       this.textBoxResult.Text = "Hashwert";
-      this.toolTip.SetToolTip(this.textBoxResult, "Hashwert");
+      this.toolTip.SetToolTip(this.textBoxResult, "Hash value");
       // 
       // textBoxCompare
       // 
@@ -101,8 +102,9 @@
       this.textBoxCompare.Name = "textBoxCompare";
       this.textBoxCompare.Size = new System.Drawing.Size(278, 20);
       this.textBoxCompare.TabIndex = 6;
+      this.textBoxCompare.Tag = "Reference value";
       this.textBoxCompare.Text = "Vergleichswert";
-      this.toolTip.SetToolTip(this.textBoxCompare, "Vergleichswert");
+      this.toolTip.SetToolTip(this.textBoxCompare, "Reference value");
       this.textBoxCompare.Enter += new System.EventHandler(this.textBoxCompare_Enter);
       // 
       // buttonCancel
@@ -113,8 +115,9 @@
       this.buttonCancel.Name = "buttonCancel";
       this.buttonCancel.Size = new System.Drawing.Size(75, 23);
       this.buttonCancel.TabIndex = 8;
+      this.buttonCancel.Tag = "Cancel";
       this.buttonCancel.Text = "Abbrechen";
-      this.toolTip.SetToolTip(this.buttonCancel, "Berechnung abbrechen");
+      this.toolTip.SetToolTip(this.buttonCancel, "Cancel calculation");
       this.buttonCancel.UseVisualStyleBackColor = true;
       this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
       // 
@@ -139,6 +142,7 @@
       this.labelFilename.Name = "labelFilename";
       this.labelFilename.Size = new System.Drawing.Size(155, 15);
       this.labelFilename.TabIndex = 2;
+      this.labelFilename.Tag = "Select file";
       this.labelFilename.Text = "Bitte Datei wählen...";
       // 
       // labelInfo
@@ -149,6 +153,7 @@
       this.labelInfo.Name = "labelInfo";
       this.labelInfo.Size = new System.Drawing.Size(202, 15);
       this.labelInfo.TabIndex = 7;
+      this.labelInfo.Tag = "Ready";
       this.labelInfo.Text = "Bereit";
       // 
       // openFileDialogChooseFile
@@ -174,12 +179,14 @@
             this.toolStripMenuItemExit});
       this.toolStripMenuItemFile.Name = "toolStripMenuItemFile";
       this.toolStripMenuItemFile.Size = new System.Drawing.Size(46, 20);
+      this.toolStripMenuItemFile.Tag = "File";
       this.toolStripMenuItemFile.Text = "&Datei";
       // 
       // toolStripMenuItemExit
       // 
       this.toolStripMenuItemExit.Name = "toolStripMenuItemExit";
       this.toolStripMenuItemExit.Size = new System.Drawing.Size(152, 22);
+      this.toolStripMenuItemExit.Tag = "Exit";
       this.toolStripMenuItemExit.Text = "Beenden";
       this.toolStripMenuItemExit.Click += new System.EventHandler(this.ToolStripMenuItemClose_Click);
       // 
@@ -190,6 +197,7 @@
             this.toolStripMenuItemFileMode});
       this.toolStripMenuItemMode.Name = "toolStripMenuItemMode";
       this.toolStripMenuItemMode.Size = new System.Drawing.Size(56, 20);
+      this.toolStripMenuItemMode.Tag = "Mode";
       this.toolStripMenuItemMode.Text = "&Modus";
       // 
       // toolStripMenuItemTextMode
@@ -197,6 +205,7 @@
       this.toolStripMenuItemTextMode.Name = "toolStripMenuItemTextMode";
       this.toolStripMenuItemTextMode.ShortcutKeys = System.Windows.Forms.Keys.F2;
       this.toolStripMenuItemTextMode.Size = new System.Drawing.Size(157, 22);
+      this.toolStripMenuItemTextMode.Tag = "Textmode";
       this.toolStripMenuItemTextMode.Text = "Textmodus";
       this.toolStripMenuItemTextMode.Click += new System.EventHandler(this.toolStripMenuItemTextMode_Click);
       // 
@@ -207,6 +216,7 @@
       this.toolStripMenuItemFileMode.Name = "toolStripMenuItemFileMode";
       this.toolStripMenuItemFileMode.ShortcutKeys = System.Windows.Forms.Keys.F3;
       this.toolStripMenuItemFileMode.Size = new System.Drawing.Size(157, 22);
+      this.toolStripMenuItemFileMode.Tag = "Filemode";
       this.toolStripMenuItemFileMode.Text = "Dateimodus";
       // 
       // toolStripMenuItemHelp
@@ -215,12 +225,14 @@
             this.toolStripMenuItemAbout});
       this.toolStripMenuItemHelp.Name = "toolStripMenuItemHelp";
       this.toolStripMenuItemHelp.Size = new System.Drawing.Size(44, 20);
+      this.toolStripMenuItemHelp.Tag = "Help";
       this.toolStripMenuItemHelp.Text = "&Hilfe";
       // 
       // toolStripMenuItemAbout
       // 
       this.toolStripMenuItemAbout.Name = "toolStripMenuItemAbout";
       this.toolStripMenuItemAbout.Size = new System.Drawing.Size(152, 22);
+      this.toolStripMenuItemAbout.Tag = "About";
       this.toolStripMenuItemAbout.Text = "Über Get Hash";
       this.toolStripMenuItemAbout.Click += new System.EventHandler(this.überGetHashToolStripMenuAbout_Click);
       // 
@@ -268,7 +280,6 @@
     private System.Windows.Forms.Label labelInfo;
     private System.Windows.Forms.Button buttonCancel;
     private System.Windows.Forms.OpenFileDialog openFileDialogChooseFile;
-    private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemCreateGhf;
     private System.Windows.Forms.MenuStrip menuStrip;
     private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemFile;
     private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemExit;

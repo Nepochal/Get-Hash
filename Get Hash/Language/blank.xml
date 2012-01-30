@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<Translation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Language>Blank</Language>
+  <Description>This is a blank language-file as draft for future translations.</Description>
+  <Items>
+    <TranslationItem>
+      <Key></Key>
+      <Value></Value>
+    </TranslationItem>
+  </Items>
+</Translation>

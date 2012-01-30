@@ -56,6 +56,7 @@
       this.textBoxText.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
       this.textBoxText.Size = new System.Drawing.Size(406, 169);
       this.textBoxText.TabIndex = 1;
+      this.textBoxText.Tag = "Enter text";
       this.textBoxText.Text = "Hier bitte den Text eingeben.";
       this.toolTip.SetToolTip(this.textBoxText, "Text");
       this.textBoxText.Click += new System.EventHandler(this.textBoxText_Click);
@@ -71,6 +72,7 @@
       this.textBoxResult.ReadOnly = true;
       this.textBoxResult.Size = new System.Drawing.Size(314, 20);
       this.textBoxResult.TabIndex = 3;
+      this.textBoxResult.Tag = "Hash value";
       this.textBoxResult.Text = "Hashwert";
       this.toolTip.SetToolTip(this.textBoxResult, "Hashwert");
       // 
@@ -104,12 +106,14 @@
             this.ToolStripMenuItemExit});
       this.ToolStripMenuItemFile.Name = "ToolStripMenuItemFile";
       this.ToolStripMenuItemFile.Size = new System.Drawing.Size(46, 20);
+      this.ToolStripMenuItemFile.Tag = "File";
       this.ToolStripMenuItemFile.Text = "&Datei";
       // 
       // ToolStripMenuItemExit
       // 
       this.ToolStripMenuItemExit.Name = "ToolStripMenuItemExit";
       this.ToolStripMenuItemExit.Size = new System.Drawing.Size(152, 22);
+      this.ToolStripMenuItemExit.Tag = "Exit";
       this.ToolStripMenuItemExit.Text = "Beenden";
       this.ToolStripMenuItemExit.Click += new System.EventHandler(this.ToolStripMenuItemClose_Click);
       // 
@@ -120,6 +124,7 @@
             this.ToolStripMenuItemFileMode});
       this.ToolStripMenuItemMode.Name = "ToolStripMenuItemMode";
       this.ToolStripMenuItemMode.Size = new System.Drawing.Size(56, 20);
+      this.ToolStripMenuItemMode.Tag = "Mode";
       this.ToolStripMenuItemMode.Text = "&Modus";
       // 
       // ToolStripMenuItemTextMode
@@ -129,6 +134,7 @@
       this.ToolStripMenuItemTextMode.Name = "ToolStripMenuItemTextMode";
       this.ToolStripMenuItemTextMode.ShortcutKeys = System.Windows.Forms.Keys.F2;
       this.ToolStripMenuItemTextMode.Size = new System.Drawing.Size(157, 22);
+      this.ToolStripMenuItemTextMode.Tag = "Textmode";
       this.ToolStripMenuItemTextMode.Text = "Textmodus";
       // 
       // ToolStripMenuItemFileMode
@@ -136,6 +142,7 @@
       this.ToolStripMenuItemFileMode.Name = "ToolStripMenuItemFileMode";
       this.ToolStripMenuItemFileMode.ShortcutKeys = System.Windows.Forms.Keys.F3;
       this.ToolStripMenuItemFileMode.Size = new System.Drawing.Size(157, 22);
+      this.ToolStripMenuItemFileMode.Tag = "Filemode";
       this.ToolStripMenuItemFileMode.Text = "Dateimodus";
       this.ToolStripMenuItemFileMode.Click += new System.EventHandler(this.ToolStripMenuItemFileMode_Click);
       // 
@@ -145,12 +152,14 @@
             this.überGetHashToolStripMenuAbout});
       this.ToolStripMenuItemHelp.Name = "ToolStripMenuItemHelp";
       this.ToolStripMenuItemHelp.Size = new System.Drawing.Size(44, 20);
+      this.ToolStripMenuItemHelp.Tag = "Help";
       this.ToolStripMenuItemHelp.Text = "&Hilfe";
       // 
       // überGetHashToolStripMenuAbout
       // 
       this.überGetHashToolStripMenuAbout.Name = "überGetHashToolStripMenuAbout";
       this.überGetHashToolStripMenuAbout.Size = new System.Drawing.Size(152, 22);
+      this.überGetHashToolStripMenuAbout.Tag = "About";
       this.überGetHashToolStripMenuAbout.Text = "Über Get Hash";
       this.überGetHashToolStripMenuAbout.Click += new System.EventHandler(this.überGetHashToolStripMenuAbout_Click);
       // 
