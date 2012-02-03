@@ -37,6 +37,11 @@ namespace Nepochal.GetHash
     public About(string psApplication, string psVersion)
     {
       InitializeComponent();
+
+      //Translate
+      Form lfThis = this;
+      Program.mtTranslation.TranslateForm(ref lfThis);
+
       labelTitle.Text = psApplication;
       labelVersion.Text = string.Format("Version: {0}", psVersion);
     }

@@ -72,6 +72,8 @@ namespace Nepochal.GetHash
     {
       InitializeComponent();
 
+      Translate();
+
       mdTranslations = new Dictionary<Translation, string>();
       FillLanguageList(psOldLanguageFile);
     }
@@ -79,6 +81,12 @@ namespace Nepochal.GetHash
     #endregion
 
     #region Methods
+
+    private void Translate()
+    {
+      Form lfThis = this;
+      Program.mtTranslation.TranslateForm(ref lfThis);
+    }
 
     private void FillLanguageList(string psOldLanguageFile)
     {
@@ -94,7 +102,7 @@ namespace Nepochal.GetHash
           mdTranslations.Add(ltTranslation, lsFile);
           listBoxLanguages.Items.Add(ltTranslation);
           if (lsFile == psOldLanguageFile)
-            listBoxLanguages.SelectedItem=ltTranslation;
+            listBoxLanguages.SelectedItem = ltTranslation;
         }
       }
       if (listBoxLanguages.SelectedItem == null)
@@ -108,6 +116,15 @@ namespace Nepochal.GetHash
     }
 
     #endregion
+
+    private void listBoxLanguages_MouseDoubleClick(object sender, MouseEventArgs e)
+    {
+      if (e.Button == System.Windows.Forms.MouseButtons.Left && listBoxLanguages.IndexFromPoint(e.Location) != -1)
+      {
+        DialogResult = DialogResult.OK;
+        Close();
+      }
+    }
 
   }
 

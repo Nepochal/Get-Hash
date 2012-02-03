@@ -34,6 +34,11 @@ namespace Nepochal.GetHash
     public Textmode()
     {
       InitializeComponent();
+
+      //Translate
+      Form lfThis = this;
+      Program.mtTranslation.TranslateForm(ref lfThis);
+
       GlobalStatics.FillHashMethods(comboBoxHashtype);
 
       Location = Program.mcConfiguration.TextPosition;
@@ -42,6 +47,7 @@ namespace Nepochal.GetHash
       comboBoxHashtype.SelectedItem = Program.mcConfiguration.LastHashType;
 
       comboBoxHashtype.SelectedValueChanged += new EventHandler(comboBoxHashtype_SelectedValueChanged);
+      textBoxText.TextChanged += new EventHandler(textBoxText_TextChanged);
     }
     #endregion
 

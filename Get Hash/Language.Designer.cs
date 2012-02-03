@@ -43,6 +43,7 @@
       this.listBoxLanguages.Sorted = true;
       this.listBoxLanguages.TabIndex = 0;
       this.listBoxLanguages.SelectedIndexChanged += new System.EventHandler(this.listBoxLanguages_SelectedIndexChanged);
+      this.listBoxLanguages.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listBoxLanguages_MouseDoubleClick);
       // 
       // buttonCancel
       // 

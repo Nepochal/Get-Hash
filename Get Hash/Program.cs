@@ -72,6 +72,8 @@ namespace Nepochal.GetHash
             break;
         }
       Configuration.Save(mcConfiguration);
+      if (mtTranslation.Changed)
+        Translation.Save(mtTranslation, mcConfiguration.LanguageFile);
     }
 
   }

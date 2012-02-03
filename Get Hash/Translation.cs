@@ -96,11 +96,32 @@ namespace Nepochal.GetHash
 
     public void TranslateForm(ref Form pfForm)
     {
-      //Maybe there are some missing tools, because they do not inherit from control or have controls themself
+      //Translate form-text
+      if (pfForm.Tag != null && !string.IsNullOrEmpty(pfForm.Tag.ToString()))
+        pfForm.Text = GetValue(pfForm.Tag.ToString());
 
+      //Translate Controls
       for (int liCount = 0; liCount < pfForm.Controls.Count; liCount++)
+      {
         if (pfForm.Controls[liCount].Tag != null && pfForm.Controls[liCount].Tag.ToString() != string.Empty)
           pfForm.Controls[liCount].Text = GetValue(pfForm.Controls[liCount].Tag.ToString());
+
+        //Translate MenuStripItems
+        if (pfForm.Controls[liCount] is MenuStrip)
+          foreach (ToolStripMenuItem ltsmiCur in ((MenuStrip)pfForm.Controls[liCount]).Items)
+            TranslateToolStripItem(ltsmiCur);
+      }
+    }
+
+    private void TranslateToolStripItem(ToolStripMenuItem ptsmiItem)
+    {
+      if(ptsmiItem.Tag != null && !string.IsNullOrEmpty(ptsmiItem.Tag.ToString()))
+        ptsmiItem.Text = GetValue(ptsmiItem.Tag.ToString());
+
+      if (ptsmiItem.HasDropDownItems)
+        foreach (ToolStripItem ltsiCur in ptsmiItem.DropDownItems)
+          if (ltsiCur is ToolStripMenuItem)
+            TranslateToolStripItem((ToolStripMenuItem)ltsiCur);
     }
 
     #endregion

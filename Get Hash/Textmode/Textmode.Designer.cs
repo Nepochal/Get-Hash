@@ -36,6 +36,7 @@
       this.menuStrip = new System.Windows.Forms.MenuStrip();
       this.ToolStripMenuItemFile = new System.Windows.Forms.ToolStripMenuItem();
       this.ToolStripMenuItemSelectLanguage = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
       this.ToolStripMenuItemExit = new System.Windows.Forms.ToolStripMenuItem();
       this.ToolStripMenuItemMode = new System.Windows.Forms.ToolStripMenuItem();
       this.ToolStripMenuItemTextMode = new System.Windows.Forms.ToolStripMenuItem();
@@ -43,7 +44,6 @@
       this.ToolStripMenuItemHelp = new System.Windows.Forms.ToolStripMenuItem();
       this.überGetHashToolStripMenuAbout = new System.Windows.Forms.ToolStripMenuItem();
       this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-      this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
       this.menuStrip.SuspendLayout();
       this.SuspendLayout();
       // 
@@ -62,7 +62,6 @@
       this.textBoxText.Text = "Hier bitte den Text eingeben.";
       this.toolTip.SetToolTip(this.textBoxText, "Text");
       this.textBoxText.Click += new System.EventHandler(this.textBoxText_Click);
-      this.textBoxText.TextChanged += new System.EventHandler(this.textBoxText_TextChanged);
       // 
       // textBoxResult
       // 
@@ -121,6 +120,11 @@
       this.ToolStripMenuItemSelectLanguage.Text = "Sprache wählen";
       this.ToolStripMenuItemSelectLanguage.Click += new System.EventHandler(this.ToolStripMenuItemSelectLanguage_Click);
       // 
+      // toolStripMenuItem2
+      // 
+      this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+      this.toolStripMenuItem2.Size = new System.Drawing.Size(154, 6);
+      // 
       // ToolStripMenuItemExit
       // 
       this.ToolStripMenuItemExit.Name = "ToolStripMenuItemExit";
@@ -174,11 +178,6 @@
       this.überGetHashToolStripMenuAbout.Tag = "About";
       this.überGetHashToolStripMenuAbout.Text = "Über Get Hash";
       this.überGetHashToolStripMenuAbout.Click += new System.EventHandler(this.überGetHashToolStripMenuAbout_Click);
-      // 
-      // toolStripMenuItem2
-      // 
-      this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-      this.toolStripMenuItem2.Size = new System.Drawing.Size(154, 6);
       // 
       // Textmode
       // 

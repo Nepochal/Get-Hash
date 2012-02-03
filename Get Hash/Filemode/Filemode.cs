@@ -55,18 +55,23 @@ namespace Nepochal.GetHash
     public Filemode()
     {
       InitializeComponent();
+
+      Translate();
+      
       GlobalStatics.FillHashMethods(comboBoxHashtype);
 
       Location = Program.mcConfiguration.FilePosition;
       Width = Program.mcConfiguration.FileSize.X;
       Height = Program.mcConfiguration.FileSize.Y;
       comboBoxHashtype.SelectedItem = Program.mcConfiguration.LastHashType;
-
     }
 
     public Filemode(string psFilePath)
     {
       InitializeComponent();
+
+      Translate();
+
       GlobalStatics.FillHashMethods(comboBoxHashtype);
 
       Location = Program.mcConfiguration.FilePosition;
@@ -81,6 +86,13 @@ namespace Nepochal.GetHash
     #endregion
 
     #region Methods
+
+    public void Translate()
+    {
+      Form lfThis = this;
+      Program.mtTranslation.TranslateForm(ref lfThis);
+    }
+
     public void Calculating(bool pbCalculating)
     {
       if (buttonChooseFile.InvokeRequired)
@@ -98,7 +110,7 @@ namespace Nepochal.GetHash
       switch (pbCalculating)
       {
         case true:
-          SetInfoText("Hash wird berechnet...", Color.FromKnownColor(KnownColor.ControlText));
+          SetInfoText(Program.mtTranslation.GetValue("Calculating hash"), Color.FromKnownColor(KnownColor.ControlText));
           mbCalculating = true;
           StartCalculationThread();
           break;
@@ -108,7 +120,7 @@ namespace Nepochal.GetHash
           {
             mtCalculationThread.Abort();
             textBoxResult.Text = string.Empty;
-            SetInfoText("Hashberechnung abgebrochen!", Color.FromKnownColor(KnownColor.ControlText));
+            SetInfoText(Program.mtTranslation.GetValue("Aborted hash calculation"), Color.FromKnownColor(KnownColor.ControlText));
             mbCalculating = false;
           }
           break;
@@ -130,15 +142,16 @@ namespace Nepochal.GetHash
     {
       if (textBoxCompare.Text.Trim() == textBoxResult.Text)
       {
-        SetInfoText("Die Datei ist in Ordnung.", Color.Green);
+        SetInfoText(Program.mtTranslation.GetValue("File okay"), Color.Green);
         return true;
       }
       else
       {
-        SetInfoText("Die Datei ist beschädigt.", Color.Red);
+        SetInfoText(Program.mtTranslation.GetValue("File corrupted"), Color.Red);
         return false;
       }
     }
+
     #endregion
 
     #region Designer Methods
@@ -209,7 +222,7 @@ namespace Nepochal.GetHash
       if (e.Data.GetDataPresent(DataFormats.FileDrop))
       {
         string[] lsFilename = ((string[])e.Data.GetData(DataFormats.FileDrop));
-        if (lsFilename.Length != 1 || Directory.Exists(lsFilename[0]) || Path.GetExtension(lsFilename[0]).ToLower() == ".ghf")
+        if (lsFilename.Length != 1 || Directory.Exists(lsFilename[0]))
           e.Effect = DragDropEffects.None;
         else
           e.Effect = DragDropEffects.Move;
@@ -279,7 +292,7 @@ namespace Nepochal.GetHash
         mbFinishedCalculating = false;
         textBoxCompare.TextChanged -= new EventHandler(textBoxCompare_TextChanged);
 
-        if (textBoxCompare.Text == "Vergleichswert")
+        if (textBoxCompare.Text == Program.mtTranslation.GetValue("Reference value"))
           textBoxCompare_Enter(this, null);
         string lsReturn = GlobalStatics.CalculateHashFile(msFilePath, GetSelectedHashType());
         SetCalculatedHash(lsReturn);
@@ -287,7 +300,7 @@ namespace Nepochal.GetHash
         Calculating(false);
 
         if (textBoxCompare.Text == string.Empty)
-          SetInfoText("Berechnung erfolgreich beendet.", Color.FromKnownColor(KnownColor.ControlText));
+          SetInfoText(Program.mtTranslation.GetValue("Calculation successful"), Color.FromKnownColor(KnownColor.ControlText));
         else
           CompareHashes();
 
