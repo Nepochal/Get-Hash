@@ -14,7 +14,7 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with Get Hash. If not, see <http://www.gnu.org/licenses/gpl.html>.
 
-The complete source code can be found at https://github.com/Nepochal/Get-Hash.
+The complete source code can be found at <https://github.com/Nepochal/Get-Hash>.
 The installer for the current version can be found at <http://mischolz.de/?page_id=46>
 */
 
@@ -33,6 +33,7 @@ namespace Nepochal.GetHash
     public static readonly string msVersion = "2.0.3";
 
     public static Configuration mcConfiguration;
+    public static Translation mtTranslation;
 
     #endregion
 
@@ -46,10 +47,15 @@ namespace Nepochal.GetHash
       Application.EnableVisualStyles();
       Application.SetCompatibleTextRenderingDefault(false);
 
-      if (!LoadConfiguration())
+      Configuration.Load(out mcConfiguration);
+
+      if (string.IsNullOrEmpty(mcConfiguration.LanguageFile) || !File.Exists(mcConfiguration.LanguageFile) || !Translation.Load(mcConfiguration.LanguageFile, out mtTranslation))
       {
-        MessageBox.Show(string.Format("Bitte beachten Sie:{0}Wir garantieren nicht, dass jeder Hashwert korrekt berechnet wird.{0}{0}Wenn Sie Fehler finden, würden wir uns über eine E-mail an nepochal@mischolz.de oder über einen Patch für unser Git-Repository freuen.", Environment.NewLine), "Hinweis");
-        mcConfiguration = new Configuration();
+        Language lfLanguage = new Language();
+        if (lfLanguage.ShowDialog() != DialogResult.OK)
+          return;
+        mcConfiguration.LanguageFile = lfLanguage.TranslationPath;
+        mtTranslation = lfLanguage.Translation;
       }
 
       if (args.Length == 1 && File.Exists(args[0]))
@@ -65,50 +71,8 @@ namespace Nepochal.GetHash
             Application.Run(new Filemode());
             break;
         }
-      SaveConfiguration();
+      Configuration.Save(mcConfiguration);
     }
-
-    #region Methods
-
-    private static void SaveConfiguration()
-    {
-      string lsPath = Path.Combine(Application.StartupPath, "config.ini");
-      FileStream lfsStream = new FileStream(lsPath, FileMode.Create, FileAccess.Write, FileShare.None);
-      StreamWriter lswWriter = new StreamWriter(lfsStream, Encoding.UTF8);
-      XmlSerializer lxSerializer = new XmlSerializer(typeof(Configuration));
-
-      lxSerializer.Serialize(lswWriter, mcConfiguration);
-
-      lswWriter.Close();
-      lswWriter.Dispose();
-      lfsStream.Dispose();
-    }
-
-    private static bool LoadConfiguration()
-    {
-      try
-      {
-        string lsPath = Path.Combine(Application.StartupPath, "config.ini");
-        if (!File.Exists(lsPath))
-          return false;
-        FileStream lfsStream = new FileStream(lsPath, FileMode.Open, FileAccess.Read, FileShare.None);
-        StreamReader lssReader = new StreamReader(lfsStream, Encoding.UTF8);
-        XmlSerializer lxSerializer = new XmlSerializer(typeof(Configuration));
-
-        mcConfiguration = (Configuration)lxSerializer.Deserialize(lssReader);
-
-        lssReader.Close();
-        lssReader.Dispose();
-        lfsStream.Dispose();
-        return true;
-      }
-      catch
-      {
-        return false;
-      }
-    }
-
-    #endregion
 
   }
 }

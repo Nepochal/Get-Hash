@@ -14,7 +14,7 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with Get Hash. If not, see <http://www.gnu.org/licenses/gpl.html>.
 
-The complete source code can be found at https://github.com/Nepochal/Get-Hash.
+The complete source code can be found at <https://github.com/Nepochal/Get-Hash>.
 The installer for the current version can be found at <http://mischolz.de/?page_id=46>
 
 The implementation of the CRC32-algorithm was taken

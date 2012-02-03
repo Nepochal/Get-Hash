@@ -14,11 +14,15 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with Get Hash. If not, see <http://www.gnu.org/licenses/gpl.html>.
 
-The complete source code can be found at https://github.com/Nepochal/Get-Hash.
+The complete source code can be found at <https://github.com/Nepochal/Get-Hash>.
 The installer for the current version can be found at <http://mischolz.de/?page_id=46>
 */
 
 using System.Drawing;
+using System.IO;
+using System.Windows.Forms;
+using System.Xml.Serialization;
+using System.Text;
 
 namespace Nepochal.GetHash
 {
@@ -35,6 +39,8 @@ namespace Nepochal.GetHash
 
     private Point mpTextPosition = new Point(20, 20);
     private Point mpTextSize = new Point(428, 264);
+
+    private string msLanguageFile;
 
     #endregion
 
@@ -76,6 +82,56 @@ namespace Nepochal.GetHash
     {
       get { return mpTextSize; }
       set { mpTextSize = value; }
+    }
+
+
+    public string LanguageFile
+    {
+      get { return msLanguageFile; }
+      set { msLanguageFile = value; }
+    }
+
+    #endregion
+
+    #region Methods
+
+    public static void Save(Configuration pcConfiguration)
+    {
+      string lsPath = Path.Combine(Application.StartupPath, "config.ini");
+      FileStream lfsStream = new FileStream(lsPath, FileMode.Create, FileAccess.Write, FileShare.None);
+      StreamWriter lswWriter = new StreamWriter(lfsStream, Encoding.UTF8);
+      XmlSerializer lxSerializer = new XmlSerializer(typeof(Configuration));
+
+      lxSerializer.Serialize(lswWriter, pcConfiguration);
+
+      lswWriter.Close();
+      lswWriter.Dispose();
+      lfsStream.Dispose();
+    }
+
+    public static bool Load(out Configuration pcConfiguration)
+    {
+      pcConfiguration = new Configuration();
+      try
+      {
+        string lsPath = Path.Combine(Application.StartupPath, "config.ini");
+        if (!File.Exists(lsPath))
+          return false;
+        FileStream lfsStream = new FileStream(lsPath, FileMode.Open, FileAccess.Read, FileShare.None);
+        StreamReader lssReader = new StreamReader(lfsStream, Encoding.UTF8);
+        XmlSerializer lxSerializer = new XmlSerializer(typeof(Configuration));
+
+        pcConfiguration = (Configuration)lxSerializer.Deserialize(lssReader);
+
+        lssReader.Close();
+        lssReader.Dispose();
+        lfsStream.Dispose();
+        return true;
+      }
+      catch
+      {
+        return false;
+      }
     }
 
     #endregion
