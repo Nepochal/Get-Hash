@@ -64,24 +64,23 @@ namespace Nepochal.GetHash
       InitializeComponent();
 
       mdTranslations = new Dictionary<Translation, string>();
-      FillLanguageList();
+      FillLanguageList(string.Empty);
       listBoxLanguages.SelectedIndex = 0;
     }
 
-    public Language(Translation ptOldTranslation)
+    public Language(string psOldLanguageFile)
     {
       InitializeComponent();
 
       mdTranslations = new Dictionary<Translation, string>();
-      FillLanguageList();
-      listBoxLanguages.SelectedItem = ptOldTranslation;
+      FillLanguageList(psOldLanguageFile);
     }
 
     #endregion
 
     #region Methods
 
-    private void FillLanguageList()
+    private void FillLanguageList(string psOldLanguageFile)
     {
       string lsFilePath = Path.Combine(Application.StartupPath, "Language");
       foreach (string lsFile in Directory.GetFiles(lsFilePath))
@@ -94,8 +93,12 @@ namespace Nepochal.GetHash
         {
           mdTranslations.Add(ltTranslation, lsFile);
           listBoxLanguages.Items.Add(ltTranslation);
+          if (lsFile == psOldLanguageFile)
+            listBoxLanguages.SelectedItem=ltTranslation;
         }
       }
+      if (listBoxLanguages.SelectedItem == null)
+        listBoxLanguages.SelectedIndex = 0;
     }
 
     private void listBoxLanguages_SelectedIndexChanged(object sender, EventArgs e)

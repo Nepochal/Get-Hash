@@ -35,6 +35,7 @@
       this.comboBoxHashtype = new System.Windows.Forms.ComboBox();
       this.menuStrip = new System.Windows.Forms.MenuStrip();
       this.ToolStripMenuItemFile = new System.Windows.Forms.ToolStripMenuItem();
+      this.ToolStripMenuItemSelectLanguage = new System.Windows.Forms.ToolStripMenuItem();
       this.ToolStripMenuItemExit = new System.Windows.Forms.ToolStripMenuItem();
       this.ToolStripMenuItemMode = new System.Windows.Forms.ToolStripMenuItem();
       this.ToolStripMenuItemTextMode = new System.Windows.Forms.ToolStripMenuItem();
@@ -42,6 +43,7 @@
       this.ToolStripMenuItemHelp = new System.Windows.Forms.ToolStripMenuItem();
       this.überGetHashToolStripMenuAbout = new System.Windows.Forms.ToolStripMenuItem();
       this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+      this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
       this.menuStrip.SuspendLayout();
       this.SuspendLayout();
       // 
@@ -103,16 +105,26 @@
       // ToolStripMenuItemFile
       // 
       this.ToolStripMenuItemFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ToolStripMenuItemSelectLanguage,
+            this.toolStripMenuItem2,
             this.ToolStripMenuItemExit});
       this.ToolStripMenuItemFile.Name = "ToolStripMenuItemFile";
       this.ToolStripMenuItemFile.Size = new System.Drawing.Size(46, 20);
       this.ToolStripMenuItemFile.Tag = "File";
       this.ToolStripMenuItemFile.Text = "&Datei";
       // 
+      // ToolStripMenuItemSelectLanguage
+      // 
+      this.ToolStripMenuItemSelectLanguage.Name = "ToolStripMenuItemSelectLanguage";
+      this.ToolStripMenuItemSelectLanguage.Size = new System.Drawing.Size(157, 22);
+      this.ToolStripMenuItemSelectLanguage.Tag = "Select language";
+      this.ToolStripMenuItemSelectLanguage.Text = "Sprache wählen";
+      this.ToolStripMenuItemSelectLanguage.Click += new System.EventHandler(this.ToolStripMenuItemSelectLanguage_Click);
+      // 
       // ToolStripMenuItemExit
       // 
       this.ToolStripMenuItemExit.Name = "ToolStripMenuItemExit";
-      this.ToolStripMenuItemExit.Size = new System.Drawing.Size(152, 22);
+      this.ToolStripMenuItemExit.Size = new System.Drawing.Size(157, 22);
       this.ToolStripMenuItemExit.Tag = "Exit";
       this.ToolStripMenuItemExit.Text = "Beenden";
       this.ToolStripMenuItemExit.Click += new System.EventHandler(this.ToolStripMenuItemClose_Click);
@@ -158,10 +170,15 @@
       // überGetHashToolStripMenuAbout
       // 
       this.überGetHashToolStripMenuAbout.Name = "überGetHashToolStripMenuAbout";
-      this.überGetHashToolStripMenuAbout.Size = new System.Drawing.Size(152, 22);
+      this.überGetHashToolStripMenuAbout.Size = new System.Drawing.Size(150, 22);
       this.überGetHashToolStripMenuAbout.Tag = "About";
       this.überGetHashToolStripMenuAbout.Text = "Über Get Hash";
       this.überGetHashToolStripMenuAbout.Click += new System.EventHandler(this.überGetHashToolStripMenuAbout_Click);
+      // 
+      // toolStripMenuItem2
+      // 
+      this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+      this.toolStripMenuItem2.Size = new System.Drawing.Size(154, 6);
       // 
       // Textmode
       // 
@@ -203,6 +220,8 @@
     private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemFileMode;
     private System.Windows.Forms.ToolStripMenuItem überGetHashToolStripMenuAbout;
     private System.Windows.Forms.ToolTip toolTip;
+    private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemSelectLanguage;
+    private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
   }
 }
 

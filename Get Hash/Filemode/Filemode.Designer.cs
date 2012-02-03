@@ -49,6 +49,8 @@
       this.toolStripMenuItemFileMode = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripMenuItemHelp = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripMenuItemAbout = new System.Windows.Forms.ToolStripMenuItem();
+      this.ToolStripMenuItemSelectLanguage = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
       this.menuStrip.SuspendLayout();
       this.SuspendLayout();
       // 
@@ -176,6 +178,8 @@
       // toolStripMenuItemFile
       // 
       this.toolStripMenuItemFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ToolStripMenuItemSelectLanguage,
+            this.toolStripMenuItem2,
             this.toolStripMenuItemExit});
       this.toolStripMenuItemFile.Name = "toolStripMenuItemFile";
       this.toolStripMenuItemFile.Size = new System.Drawing.Size(46, 20);
@@ -185,7 +189,7 @@
       // toolStripMenuItemExit
       // 
       this.toolStripMenuItemExit.Name = "toolStripMenuItemExit";
-      this.toolStripMenuItemExit.Size = new System.Drawing.Size(152, 22);
+      this.toolStripMenuItemExit.Size = new System.Drawing.Size(157, 22);
       this.toolStripMenuItemExit.Tag = "Exit";
       this.toolStripMenuItemExit.Text = "Beenden";
       this.toolStripMenuItemExit.Click += new System.EventHandler(this.ToolStripMenuItemClose_Click);
@@ -231,10 +235,23 @@
       // toolStripMenuItemAbout
       // 
       this.toolStripMenuItemAbout.Name = "toolStripMenuItemAbout";
-      this.toolStripMenuItemAbout.Size = new System.Drawing.Size(152, 22);
+      this.toolStripMenuItemAbout.Size = new System.Drawing.Size(150, 22);
       this.toolStripMenuItemAbout.Tag = "About";
       this.toolStripMenuItemAbout.Text = "Über Get Hash";
       this.toolStripMenuItemAbout.Click += new System.EventHandler(this.überGetHashToolStripMenuAbout_Click);
+      // 
+      // ToolStripMenuItemSelectLanguage
+      // 
+      this.ToolStripMenuItemSelectLanguage.Name = "ToolStripMenuItemSelectLanguage";
+      this.ToolStripMenuItemSelectLanguage.Size = new System.Drawing.Size(157, 22);
+      this.ToolStripMenuItemSelectLanguage.Tag = "Select language";
+      this.ToolStripMenuItemSelectLanguage.Text = "Sprache wählen";
+      this.ToolStripMenuItemSelectLanguage.Click += new System.EventHandler(this.ToolStripMenuItemSelectLanguage_Click);
+      // 
+      // toolStripMenuItem2
+      // 
+      this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+      this.toolStripMenuItem2.Size = new System.Drawing.Size(154, 6);
       // 
       // Filemode
       // 
@@ -288,5 +305,7 @@
     private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemFileMode;
     private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemHelp;
     private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemAbout;
+    private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemSelectLanguage;
+    private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
   }
 }

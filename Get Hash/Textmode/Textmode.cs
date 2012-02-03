@@ -117,6 +117,16 @@ namespace Nepochal.GetHash
       Program.mcConfiguration.LastMode = Programmode.Text;
     }
 
+    private void ToolStripMenuItemSelectLanguage_Click(object sender, EventArgs e)
+    {
+      Language lfLanguage = new Language(Program.mcConfiguration.LanguageFile);
+      if (lfLanguage.ShowDialog(this) == DialogResult.OK)
+      {
+        Program.mcConfiguration.LanguageFile = lfLanguage.TranslationPath;
+        Program.mtTranslation = lfLanguage.Translation;
+      }
+    }
+
     #endregion
 
   }

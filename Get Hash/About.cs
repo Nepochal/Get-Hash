@@ -31,12 +31,19 @@ namespace Nepochal.GetHash
 {
   public partial class About : Form
   {
+
+    #region ctors
+
     public About(string psApplication, string psVersion)
     {
       InitializeComponent();
       labelTitle.Text = psApplication;
       labelVersion.Text = string.Format("Version: {0}", psVersion);
     }
+
+    #endregion
+
+    #region Designer methods
 
     private void buttonClose_Click(object sender, EventArgs e)
     {
@@ -52,5 +59,8 @@ namespace Nepochal.GetHash
     {
       Process.Start("https://github.com/Nepochal/Get-Hash");
     }
+
+    #endregion
+
   }
 }
