@@ -6,7 +6,6 @@ Feel free to send me implementations of further hash-algorithms or patches.
 Important notice
 ----------------
 There are currently no language-files so there will be displayed "[TRANSLATION MISSING" everywhere. I will include english and german language-files soon.
-Currently all Texts in the designer are german. Soon they will be translated into english.
 You will need Microsoft Visual Studio 2010 with .Net-Framework 2.0 or higher for compiling the source code.
 
 License

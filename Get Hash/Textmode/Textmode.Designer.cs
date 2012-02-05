@@ -49,9 +49,9 @@
       // 
       // textBoxText
       // 
-      this.textBoxText.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                  | System.Windows.Forms.AnchorStyles.Left)
-                  | System.Windows.Forms.AnchorStyles.Right)));
+      this.textBoxText.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
       this.textBoxText.Location = new System.Drawing.Point(7, 34);
       this.textBoxText.Multiline = true;
       this.textBoxText.Name = "textBoxText";
@@ -59,14 +59,14 @@
       this.textBoxText.Size = new System.Drawing.Size(406, 169);
       this.textBoxText.TabIndex = 1;
       this.textBoxText.Tag = "Enter text";
-      this.textBoxText.Text = "Hier bitte den Text eingeben.";
+      this.textBoxText.Text = "Please enter the text here";
       this.toolTip.SetToolTip(this.textBoxText, "Text");
       this.textBoxText.Click += new System.EventHandler(this.textBoxText_Click);
       // 
       // textBoxResult
       // 
-      this.textBoxResult.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
-                  | System.Windows.Forms.AnchorStyles.Right)));
+      this.textBoxResult.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
       this.textBoxResult.BackColor = System.Drawing.SystemColors.Window;
       this.textBoxResult.Location = new System.Drawing.Point(99, 209);
       this.textBoxResult.Name = "textBoxResult";
@@ -74,7 +74,7 @@
       this.textBoxResult.Size = new System.Drawing.Size(314, 20);
       this.textBoxResult.TabIndex = 3;
       this.textBoxResult.Tag = "Hash value";
-      this.textBoxResult.Text = "Hashwert";
+      this.textBoxResult.Text = "Hash value";
       this.toolTip.SetToolTip(this.textBoxResult, "Hashwert");
       // 
       // comboBoxHashtype
@@ -108,16 +108,16 @@
             this.toolStripMenuItem2,
             this.ToolStripMenuItemExit});
       this.ToolStripMenuItemFile.Name = "ToolStripMenuItemFile";
-      this.ToolStripMenuItemFile.Size = new System.Drawing.Size(46, 20);
+      this.ToolStripMenuItemFile.Size = new System.Drawing.Size(37, 20);
       this.ToolStripMenuItemFile.Tag = "File";
-      this.ToolStripMenuItemFile.Text = "&Datei";
+      this.ToolStripMenuItemFile.Text = "&File";
       // 
       // ToolStripMenuItemSelectLanguage
       // 
       this.ToolStripMenuItemSelectLanguage.Name = "ToolStripMenuItemSelectLanguage";
       this.ToolStripMenuItemSelectLanguage.Size = new System.Drawing.Size(157, 22);
       this.ToolStripMenuItemSelectLanguage.Tag = "Select language";
-      this.ToolStripMenuItemSelectLanguage.Text = "Sprache wählen";
+      this.ToolStripMenuItemSelectLanguage.Text = "Select language";
       this.ToolStripMenuItemSelectLanguage.Click += new System.EventHandler(this.ToolStripMenuItemSelectLanguage_Click);
       // 
       // toolStripMenuItem2
@@ -130,7 +130,7 @@
       this.ToolStripMenuItemExit.Name = "ToolStripMenuItemExit";
       this.ToolStripMenuItemExit.Size = new System.Drawing.Size(157, 22);
       this.ToolStripMenuItemExit.Tag = "Exit";
-      this.ToolStripMenuItemExit.Text = "Beenden";
+      this.ToolStripMenuItemExit.Text = "Exit";
       this.ToolStripMenuItemExit.Click += new System.EventHandler(this.ToolStripMenuItemClose_Click);
       // 
       // ToolStripMenuItemMode
@@ -139,9 +139,9 @@
             this.ToolStripMenuItemTextMode,
             this.ToolStripMenuItemFileMode});
       this.ToolStripMenuItemMode.Name = "ToolStripMenuItemMode";
-      this.ToolStripMenuItemMode.Size = new System.Drawing.Size(56, 20);
+      this.ToolStripMenuItemMode.Size = new System.Drawing.Size(50, 20);
       this.ToolStripMenuItemMode.Tag = "Mode";
-      this.ToolStripMenuItemMode.Text = "&Modus";
+      this.ToolStripMenuItemMode.Text = "&Mode";
       // 
       // ToolStripMenuItemTextMode
       // 
@@ -149,17 +149,17 @@
       this.ToolStripMenuItemTextMode.CheckState = System.Windows.Forms.CheckState.Checked;
       this.ToolStripMenuItemTextMode.Name = "ToolStripMenuItemTextMode";
       this.ToolStripMenuItemTextMode.ShortcutKeys = System.Windows.Forms.Keys.F2;
-      this.ToolStripMenuItemTextMode.Size = new System.Drawing.Size(157, 22);
+      this.ToolStripMenuItemTextMode.Size = new System.Drawing.Size(152, 22);
       this.ToolStripMenuItemTextMode.Tag = "Textmode";
-      this.ToolStripMenuItemTextMode.Text = "Textmodus";
+      this.ToolStripMenuItemTextMode.Text = "Textmode";
       // 
       // ToolStripMenuItemFileMode
       // 
       this.ToolStripMenuItemFileMode.Name = "ToolStripMenuItemFileMode";
       this.ToolStripMenuItemFileMode.ShortcutKeys = System.Windows.Forms.Keys.F3;
-      this.ToolStripMenuItemFileMode.Size = new System.Drawing.Size(157, 22);
+      this.ToolStripMenuItemFileMode.Size = new System.Drawing.Size(152, 22);
       this.ToolStripMenuItemFileMode.Tag = "Filemode";
-      this.ToolStripMenuItemFileMode.Text = "Dateimodus";
+      this.ToolStripMenuItemFileMode.Text = "Filemode";
       this.ToolStripMenuItemFileMode.Click += new System.EventHandler(this.ToolStripMenuItemFileMode_Click);
       // 
       // ToolStripMenuItemHelp
@@ -169,14 +169,14 @@
       this.ToolStripMenuItemHelp.Name = "ToolStripMenuItemHelp";
       this.ToolStripMenuItemHelp.Size = new System.Drawing.Size(44, 20);
       this.ToolStripMenuItemHelp.Tag = "Help";
-      this.ToolStripMenuItemHelp.Text = "&Hilfe";
+      this.ToolStripMenuItemHelp.Text = "&Help";
       // 
       // überGetHashToolStripMenuAbout
       // 
       this.überGetHashToolStripMenuAbout.Name = "überGetHashToolStripMenuAbout";
-      this.überGetHashToolStripMenuAbout.Size = new System.Drawing.Size(150, 22);
+      this.überGetHashToolStripMenuAbout.Size = new System.Drawing.Size(158, 22);
       this.überGetHashToolStripMenuAbout.Tag = "About";
-      this.überGetHashToolStripMenuAbout.Text = "Über Get Hash";
+      this.überGetHashToolStripMenuAbout.Text = "About Get Hash";
       this.überGetHashToolStripMenuAbout.Click += new System.EventHandler(this.überGetHashToolStripMenuAbout_Click);
       // 
       // Textmode

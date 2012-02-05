@@ -95,7 +95,7 @@
       // 
       this.buttonClose.Location = new System.Drawing.Point(12, 346);
       this.buttonClose.Name = "buttonClose";
-      this.buttonClose.Size = new System.Drawing.Size(75, 21);
+      this.buttonClose.Size = new System.Drawing.Size(76, 21);
       this.buttonClose.TabIndex = 6;
       this.buttonClose.Tag = "Ok";
       this.buttonClose.Text = "&Ok";
@@ -116,12 +116,12 @@
       // 
       // buttonSourceCode
       // 
-      this.buttonSourceCode.Location = new System.Drawing.Point(93, 346);
+      this.buttonSourceCode.Location = new System.Drawing.Point(94, 346);
       this.buttonSourceCode.Name = "buttonSourceCode";
-      this.buttonSourceCode.Size = new System.Drawing.Size(75, 21);
+      this.buttonSourceCode.Size = new System.Drawing.Size(76, 21);
       this.buttonSourceCode.TabIndex = 8;
       this.buttonSourceCode.Tag = "Source code";
-      this.buttonSourceCode.Text = "Quellcode";
+      this.buttonSourceCode.Text = "Source code";
       this.buttonSourceCode.UseVisualStyleBackColor = true;
       this.buttonSourceCode.Click += new System.EventHandler(this.buttonSourceCode_Click);
       // 
@@ -146,7 +146,7 @@
       this.ShowInTaskbar = false;
       this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
       this.Tag = "About";
-      this.Text = "Über Get Hash";
+      this.Text = "About Get Hash";
       ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
       this.ResumeLayout(false);
       this.PerformLayout();
