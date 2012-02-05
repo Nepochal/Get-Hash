@@ -86,14 +86,14 @@
       // 
       this.labelText.Location = new System.Drawing.Point(12, 146);
       this.labelText.Name = "labelText";
-      this.labelText.Size = new System.Drawing.Size(496, 197);
+      this.labelText.Size = new System.Drawing.Size(496, 212);
       this.labelText.TabIndex = 4;
       this.labelText.Tag = "About text";
       this.labelText.Text = resources.GetString("labelText.Text");
       // 
       // buttonClose
       // 
-      this.buttonClose.Location = new System.Drawing.Point(12, 346);
+      this.buttonClose.Location = new System.Drawing.Point(12, 361);
       this.buttonClose.Name = "buttonClose";
       this.buttonClose.Size = new System.Drawing.Size(76, 21);
       this.buttonClose.TabIndex = 6;
@@ -116,7 +116,7 @@
       // 
       // buttonSourceCode
       // 
-      this.buttonSourceCode.Location = new System.Drawing.Point(94, 346);
+      this.buttonSourceCode.Location = new System.Drawing.Point(94, 361);
       this.buttonSourceCode.Name = "buttonSourceCode";
       this.buttonSourceCode.Size = new System.Drawing.Size(76, 21);
       this.buttonSourceCode.TabIndex = 8;
@@ -129,7 +129,7 @@
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.ClientSize = new System.Drawing.Size(516, 378);
+      this.ClientSize = new System.Drawing.Size(516, 393);
       this.Controls.Add(this.buttonSourceCode);
       this.Controls.Add(this.linkLabelHp);
       this.Controls.Add(this.buttonClose);

@@ -1,11 +1,10 @@
 Get Hash is a small tool which lets you calculate all common hashes (MD5, RIPEMD, SHA ...) of files and texts, for example, to check hashed passwords or downloaded files. The tool is characterized mainly by its simple design and intuitive ease of operation.
 The installer for the current version can be found at http://mischolz.de/?page_id=46
 
-Feel free to send me implementations of further hash-algorithms or patches.
+Feel free to send me implementations of further hash-algorithms, patches or translations.
 
 Important notice
 ----------------
-There are currently no language-files so there will be displayed "[TRANSLATION MISSING" everywhere. I will include english and german language-files soon.
 You will need Microsoft Visual Studio 2010 with .Net-Framework 2.0 or higher for compiling the source code.
 
 License

@@ -167,7 +167,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="128.ico" />
-    <Content Include="Language\blank.xml" />
+    <Content Include="Language\english.xml" />
     <Content Include="Language\german.xml" />
     <Content Include="LICENSE.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
