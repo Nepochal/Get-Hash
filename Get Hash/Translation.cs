@@ -131,14 +131,16 @@ namespace Nepochal.GetHash
     public static bool Save(Translation ptTranslation, string psFilePath)
     {
       FileStream lfsStream = new FileStream(psFilePath, FileMode.Create, FileAccess.Write);
+      StreamWriter lswWriter = new StreamWriter(lfsStream, Encoding.Unicode);
       XmlSerializer lxsSerializer;
 
       try
       {
 
         lxsSerializer = new XmlSerializer(typeof(Translation));
-        lxsSerializer.Serialize(lfsStream, ptTranslation);
-        lfsStream.Close();
+        lxsSerializer.Serialize(lswWriter, ptTranslation);
+        lswWriter.Close();
+        lswWriter.Dispose();
         lfsStream.Dispose();
 
         return true;
@@ -164,18 +166,20 @@ namespace Nepochal.GetHash
       }
 
       FileStream lfsStream = new FileStream(psFilePath, FileMode.Open, FileAccess.Read);
+      StreamReader lsrReader = new StreamReader(lfsStream, Encoding.Unicode);
       XmlSerializer lxsSerializer;
 
       try
       {
         lxsSerializer = new XmlSerializer(typeof(Translation));
-        ptTranslation = (Translation)lxsSerializer.Deserialize(lfsStream);
-        lfsStream.Close();
+        ptTranslation = (Translation)lxsSerializer.Deserialize(lsrReader);
+        lsrReader.Close();
+        lsrReader.Dispose();
         lfsStream.Dispose();
 
         return true;
       }
-      catch
+      catch (Exception e)
       {
         ptTranslation = null;
         return false;
