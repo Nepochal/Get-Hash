@@ -169,6 +169,7 @@
     <Content Include="128.ico" />
     <Content Include="Language\english.xml" />
     <Content Include="Language\german.xml" />
+    <Content Include="Language\readme.txt" />
     <Content Include="LICENSE.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

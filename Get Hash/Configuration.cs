@@ -23,6 +23,7 @@ using System.IO;
 using System.Windows.Forms;
 using System.Xml.Serialization;
 using System.Text;
+using System;
 
 namespace Nepochal.GetHash
 {
@@ -97,16 +98,26 @@ namespace Nepochal.GetHash
 
     public static void Save(Configuration pcConfiguration)
     {
-      string lsPath = Path.Combine(Application.StartupPath, "config.ini");
-      FileStream lfsStream = new FileStream(lsPath, FileMode.Create, FileAccess.Write, FileShare.None);
-      StreamWriter lswWriter = new StreamWriter(lfsStream, Encoding.UTF8);
-      XmlSerializer lxSerializer = new XmlSerializer(typeof(Configuration));
+      try
+      {
+        string lsPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Get Hash");
+        if (!Directory.Exists(lsPath))
+          Directory.CreateDirectory(lsPath);
+        lsPath = Path.Combine(lsPath, "config.ini");
+        FileStream lfsStream = new FileStream(lsPath, FileMode.Create, FileAccess.Write, FileShare.None);
+        StreamWriter lswWriter = new StreamWriter(lfsStream, Encoding.UTF8);
+        XmlSerializer lxSerializer = new XmlSerializer(typeof(Configuration));
 
-      lxSerializer.Serialize(lswWriter, pcConfiguration);
+        lxSerializer.Serialize(lswWriter, pcConfiguration);
 
-      lswWriter.Close();
-      lswWriter.Dispose();
-      lfsStream.Dispose();
+        lswWriter.Close();
+        lswWriter.Dispose();
+        lfsStream.Dispose();
+      }
+      catch
+      {
+        return;
+      }
     }
 
     public static bool Load(out Configuration pcConfiguration)
@@ -114,7 +125,7 @@ namespace Nepochal.GetHash
       pcConfiguration = new Configuration();
       try
       {
-        string lsPath = Path.Combine(Application.StartupPath, "config.ini");
+        string lsPath = Path.Combine(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Get Hash"), "config.ini");
         if (!File.Exists(lsPath))
           return false;
         FileStream lfsStream = new FileStream(lsPath, FileMode.Open, FileAccess.Read, FileShare.None);

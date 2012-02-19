@@ -11,7 +11,7 @@
           </SoftwareWatermark>
         </NineRays.ILOMD.Options.Options>
       </ObfuscationOptions>
-      <Name>Get Hash\bin\Debug\Get Hash.exe</Name>
+      <Name>Get Hash\bin\Release\Get Hash.exe</Name>
     </NineRays.ILOMD.Options.AssemblyFileName>
   </AssemblyList>
   <SaveToDirectory>.\Spices_output</SaveToDirectory>
