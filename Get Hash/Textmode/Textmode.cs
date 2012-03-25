@@ -36,8 +36,7 @@ namespace Nepochal.GetHash
       InitializeComponent();
 
       //Translate
-      Form lfThis = this;
-      Program.mtTranslation.TranslateForm(ref lfThis);
+      Translate();
 
       GlobalStatics.FillHashMethods(comboBoxHashtype);
 
@@ -52,6 +51,12 @@ namespace Nepochal.GetHash
     #endregion
 
     #region Methods
+
+    public void Translate()
+    {
+      Form lfThis = this;
+      Program.mtTranslation.TranslateForm(ref lfThis);
+    }
 
     #endregion
 
@@ -130,6 +135,7 @@ namespace Nepochal.GetHash
       {
         Program.mcConfiguration.LanguageFile = lfLanguage.TranslationPath;
         Program.mtTranslation = lfLanguage.Translation;
+        Translate();
       }
     }
 

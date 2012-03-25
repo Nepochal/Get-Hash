@@ -271,6 +271,7 @@ namespace Nepochal.GetHash
       {
         Program.mcConfiguration.LanguageFile = lfLanguage.TranslationPath;
         Program.mtTranslation = lfLanguage.Translation;
+        Translate();
       }
     }
 
