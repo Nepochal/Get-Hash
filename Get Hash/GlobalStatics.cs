@@ -125,7 +125,7 @@ namespace Nepochal.GetHash
       byte[] lbText = Encoding.Default.GetBytes(psText);
       byte[] lbReturnBytes = new byte[0];
 
-      //verschiedene Hashverfahren
+      //different hash algorithms
       switch (phtHashtype)
       {
 
@@ -171,7 +171,7 @@ namespace Nepochal.GetHash
           return "Not implemented yet!";
       }
 
-      //Bytes in String zurückwandeln
+      //convert the bytes back intto a string
       StringBuilder lsbReturnText = new StringBuilder();
 
       for (int liPos = 0; liPos < lbReturnBytes.Length; liPos++)
@@ -185,7 +185,7 @@ namespace Nepochal.GetHash
       byte[] lbFile = File.ReadAllBytes(psFilepath);
       byte[] lbReturnBytes = new byte[0];
 
-      //verschiedene Hashverfahren
+      //different hash algorithms
       switch (phtHashtype)
       {
 
@@ -231,7 +231,7 @@ namespace Nepochal.GetHash
           return "Not implemented yet!";
       }
 
-      //Bytes in String zurückwandeln
+      //convert the bytes back intto a string
       StringBuilder lsbReturnText = new StringBuilder();
 
       for (int liPos = 0; liPos < lbReturnBytes.Length; liPos++)

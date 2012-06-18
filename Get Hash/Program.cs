@@ -30,7 +30,7 @@ namespace Nepochal.GetHash
   {
     #region Global Information
 
-    public static readonly string msVersion = "2.1.1";
+    public static readonly string msVersion = "2.1.2";
 
     public static Configuration mcConfiguration;
     public static Translation mtTranslation;
